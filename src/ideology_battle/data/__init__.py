@@ -22,7 +22,7 @@ def load_all_units() -> Dict[str, Unit]:
         if info.get("skill_id"):
             skill_cls = SKILL_REGISTRY.get(info["skill_id"])
             if skill_cls:
-                skill = skill_cls()
+                skill = skill_cls()  # type: ignore[abstract]
         units[uid] = Unit(
             id=uid,
             name=info["name"],

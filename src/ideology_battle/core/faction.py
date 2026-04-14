@@ -26,7 +26,7 @@ class Faction:
     def apply(self, units: List[Unit]) -> List[str]:
         """Apply synergy buffs to eligible units and return log messages."""
         messages: List[str] = []
-        counts: Dict[str, int] = {}
+        counts: Dict[int, int] = {}
         for u in units:
             if self.name in u.faction_tags:
                 counts[u.team] = counts.get(u.team, 0) + 1

@@ -47,7 +47,7 @@ class BattleState:
             return 0
         return None
 
-    def _snapshot(self) -> Dict[str, any]:
+    def _snapshot(self) -> Dict[str, Any]:
         return {
             "turn": self.turn,
             "units": [

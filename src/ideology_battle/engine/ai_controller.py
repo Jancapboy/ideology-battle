@@ -17,13 +17,13 @@ class Action:
     destination: Optional[Position] = None
 
 
-def find_nearest_enemy(unit: Unit, enemies: List[Unit]) -> Optional[Unit]:
+def find_nearest_enemy(unit: Unit, enemies: list[Unit]) -> Unit | None:
     if not unit.position or not enemies:
         return None
     alive = [e for e in enemies if e.is_alive and e.position]
     if not alive:
         return None
-    return min(alive, key=lambda e: unit.position.distance_to(e.position))  # type: ignore[union-attr]
+    return min(alive, key=lambda e: unit.position.distance_to(e.position))  # type: ignore[arg-type,union-attr]
 
 
 def move_towards(unit: Unit, target: Unit) -> Optional[Position]:
