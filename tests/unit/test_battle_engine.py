@@ -1,13 +1,13 @@
 """Unit tests for battle engine."""
 
-import pytest
-
 from ideology_battle.core.unit import Unit
 from ideology_battle.engine.battle_engine import BattleEngine
 
 
 def make_unit(uid: str, name: str, team: int = 0) -> Unit:
-    return Unit(id=uid, name=name, faction_tags=["测试系"], hp=100, max_hp=100, atk=10, spd=1.0, team=team)
+    return Unit(
+        id=uid, name=name, faction_tags=["测试系"], hp=100, max_hp=100, atk=10, spd=1.0, team=team
+    )
 
 
 class TestBattleEngine:

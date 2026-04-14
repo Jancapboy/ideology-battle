@@ -6,7 +6,6 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 from ideology_battle.core.constants import GRID_SIZE
-from ideology_battle.core.skill import Event
 from ideology_battle.core.unit import Position, Unit
 
 
@@ -31,7 +30,6 @@ def move_towards(unit: Unit, target: Unit) -> Optional[Position]:
     if not unit.position or not target.position:
         return None
     ux, uy = unit.position.x, unit.position.y
-    tx, ty = target.position.x, target.position.y
     best: Optional[Position] = None
     best_dist = unit.position.distance_to(target.position)
     for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import random
 import time
 from typing import List
 
@@ -13,7 +12,6 @@ from ideology_battle.engine.battle_engine import BattleEngine
 
 def render_grid(engine: BattleEngine) -> str:
     from ideology_battle.core.constants import GRID_SIZE
-    from ideology_battle.core.unit import Position
 
     lines: List[str] = []
     pos_map = {}

@@ -44,7 +44,9 @@ class InvisibleHand(Skill):
             target = max(allies, key=lambda u: u.current_atk)
             buff = Buff("market_boost", "atk", target.atk * 0.3, 3, self.name)
             target.buffs.append(buff)
-            events.append(Event("buff", caster, target, buff.value, f"{target.name} 获得市场 boost"))
+            events.append(
+                Event("buff", caster, target, buff.value, f"{target.name} 获得市场 boost")
+            )
             # 20% chance to bankrupt lowest HP ally
             victim = min(allies, key=lambda u: u.hp)
             if random.random() < 0.2:
@@ -124,7 +126,9 @@ class PopulistRhetoric(Skill):
         events: List[Event] = []
         for ally in allies:
             ally.heal(ally.max_hp * 0.15)
-            events.append(Event("heal", caster, ally, ally.max_hp * 0.15, f"{ally.name} 被民意治愈"))
+            events.append(
+                Event("heal", caster, ally, ally.max_hp * 0.15, f"{ally.name} 被民意治愈")
+            )
         return events
 
 
@@ -156,9 +160,7 @@ class ConsumerismFrenzy(Skill):
             damage = caster.current_atk * 1.2
             target.take_damage(damage)
             caster.heal(damage * 0.3)
-            events.append(
-                Event("damage", caster, target, damage, f"{target.name} 被消费主义吞噬")
-            )
+            events.append(Event("damage", caster, target, damage, f"{target.name} 被消费主义吞噬"))
             events.append(Event("heal", caster, caster, damage * 0.3, f"{caster.name} 回血"))
         return events
 

@@ -2,13 +2,11 @@
 
 from __future__ import annotations
 
-import random
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
 from ideology_battle.core.constants import GRID_SIZE, MAX_TURNS
 from ideology_battle.core.faction import FACTION_REGISTRY
-from ideology_battle.core.skill import Event
 from ideology_battle.core.unit import Position, Unit
 from ideology_battle.engine.ai_controller import Action, decide_action
 

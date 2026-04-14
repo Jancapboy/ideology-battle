@@ -45,9 +45,7 @@ class Faction:
                                 self.name,
                             )
                         )
-                    messages.append(
-                        f"Team {team} 触发 {self.name} {effect.threshold} 人羁绊"
-                    )
+                    messages.append(f"Team {team} 触发 {self.name} {effect.threshold} 人羁绊")
                     break
         return messages
 

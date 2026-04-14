@@ -10,7 +10,6 @@ from typing import Dict, List
 from ideology_battle.core.skill import SKILL_REGISTRY
 from ideology_battle.core.unit import Unit
 
-
 _DATA_DIR = Path(__file__).resolve().parent
 
 

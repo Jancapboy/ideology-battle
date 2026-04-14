@@ -32,6 +32,7 @@ class TestBattleE2E:
 
     def test_cli_demo_runs(self) -> None:
         import os
+
         env = os.environ.copy()
         env["PYTHONPATH"] = str(Path(__file__).resolve().parents[2] / "src")
         result = subprocess.run(
@@ -45,6 +46,7 @@ class TestBattleE2E:
 
     def test_cli_quick_runs(self) -> None:
         import os
+
         env = os.environ.copy()
         env["PYTHONPATH"] = str(Path(__file__).resolve().parents[2] / "src")
         result = subprocess.run(

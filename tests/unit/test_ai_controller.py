@@ -1,7 +1,5 @@
 """Unit tests for AI controller."""
 
-import pytest
-
 from ideology_battle.core.unit import Position, Unit
 from ideology_battle.engine.ai_controller import decide_action, find_nearest_enemy, move_towards
 
