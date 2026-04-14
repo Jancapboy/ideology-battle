@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import random
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import List, Optional
@@ -46,7 +47,7 @@ class InvisibleHand(Skill):
             events.append(Event("buff", caster, target, buff.value, f"{target.name} 获得市场 boost"))
             # 20% chance to bankrupt lowest HP ally
             victim = min(allies, key=lambda u: u.hp)
-            if __import__("random").random() < 0.2:
+            if random.random() < 0.2:
                 victim.take_damage(victim.hp)
                 events.append(
                     Event("death", caster, victim, victim.hp, f"{victim.name} 被市场无情淘汰")

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import random
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from ideology_battle.core.constants import GRID_SIZE, MAX_TURNS
 from ideology_battle.core.faction import FACTION_REGISTRY
@@ -27,7 +27,7 @@ class BattleState:
     turn: int = 0
     log: BattleLog = field(default_factory=BattleLog)
     winner: Optional[int] = None
-    history: List[Dict[str, any]] = field(default_factory=list)
+    history: List[Dict[str, Any]] = field(default_factory=list)
 
     @property
     def team0(self) -> List[Unit]:
